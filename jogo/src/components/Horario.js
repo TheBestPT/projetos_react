@@ -2,7 +2,11 @@ import React from 'react'
 export default class Horario extends React.Component{
     render(){
         return (
-            <h1>u</h1>
+            <div>
+                <span>2019-12-12</span>
+                <span>ás</span>
+                <span>20:30m</span>
+            </div>
         )
     }
 }
