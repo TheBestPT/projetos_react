@@ -1,0 +1,58 @@
+React 
+
+- React é um biblioteca de JavaScript
+- React só deve ser usado para um tipo de projeto que necessite a atualização dos dados constante e em tempo real senão for esse caso torna-se desnecessário
+
+- React possibilita a criação de UIs.
+- Faz designs simples de cada estado da aplicação
+- O react também atualiza e renderiza os componentes conforme os meus conteudos da base de dados
+- Componentes encapsulados são simplesmente que geram o seu próprio estado
+- Os componentes do react são classes estendidas do React.Component e é implementado um render que simplesmente retorna simplesmente um tag html por exemplo com uma mensagem.
+- Para renderizar um componente é facil fazemos ReactDOM.render() e dentro dele passamos por atribuição uma tag html com o nome do componete cirado e podemos passar por atributos alguma coisa como por exemplo o nome e como segundo atributo mandamos um seletor de onde essa informação será mostrada
+- Cada componente tem um estado this.state que quando alguma das suas proprieadades é alterada a informação será rendirizada novamente com o novo valor 
+- No React existe um tipo de sintaxe chamada JSX que não é obritória
+
+Exemplo simples em JSX
+
+const nome = "Francisco"
+const element = <h1>Ola {nome}</h1>
+
+ReactDOM.render(
+	element,
+	document.getElementById('root')
+)
+
+
+Exemplo de um simples componente
+
+class HelloMessage extends React.Component {
+  render() {
+    return (
+      <div>
+        Hello I'm {this.props.nome} and i live in  {this.props.morada}
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <HelloMessage nome="Francisco" morada="Quinta Grande"/>,
+  document.getElementById('hello-example')
+);
+
+VS sem JSX
+
+class HelloMessage extends React.Component {
+  render() {
+    return React.createElement(
+      "div",//elemento
+      null,
+      "Hello I'm ",//text
+      this.props.name,
+      " and i live in  ",
+      this.props.morada
+    );
+  }
+}
+
+ReactDOM.render(React.createElement(HelloMessage, { name: "Francisco", morada: "Quinta Grande" }), document.getElementById('hello-example'));
