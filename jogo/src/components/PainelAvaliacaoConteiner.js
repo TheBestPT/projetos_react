@@ -38,4 +38,8 @@ export default class PainelAvaliacaoConteiner extends React.Component{
     atribuirPonto2(){
         this.setState({pontos_jogador2 :  this.state.pontos_jogador2 + 1})
     }
+
+    /*somarPonto(ponto){
+
+    }*/
 }

@@ -8,8 +8,8 @@ ReactDOM.render(
     document.getElementById('root')
 )
 
-
-ReactDOM.render(
+//TESTAR RENDERIZAR DOIS JOGOS PARA VER SE A CONFLITO ENTRE PONTOS O QUE NAO ACONTECE 
+/*ReactDOM.render(
     <Aplicacao />,
     document.getElementById('aplicacao')
-)
+)*/

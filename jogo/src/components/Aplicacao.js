@@ -1,6 +1,7 @@
 import React from 'react'
 import Painel from './PainelAvaliacaoConteiner'
 
+//PROVAR QUE DA PARA FAZER VARIOS JOGOS (NAO APARECEM DINAMICAMENTE PORQUE ESSE NAO ERA O FOCO) 
 const infoContruct = {
     confrontos : [{
         confronto : {
