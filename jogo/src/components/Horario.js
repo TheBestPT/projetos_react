@@ -3,9 +3,9 @@ export default class Horario extends React.Component{
     render(){
         return (
             <div>
-                <span>2019-12-12</span>
+                <span> {this.props.data} </span>
                 <span>ás</span>
-                <span>20:30m</span>
+                <span> {this.props.hora} </span>
             </div>
         )
     }

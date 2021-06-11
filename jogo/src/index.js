@@ -1,9 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Painel from './components/PainelAvaliacaoConteiner'
+import Aplicacao from './components/Aplicacao'
 
 
 ReactDOM.render(
-    <Painel />,
+    <Aplicacao />,
     document.getElementById('root')
+)
+
+
+ReactDOM.render(
+    <Aplicacao />,
+    document.getElementById('aplicacao')
 )
