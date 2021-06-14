@@ -55,5 +55,12 @@
             "correct_answer" : 0,
             "question_image" : "Boba-Fett.jpg"
         }
+    ],
+    "question_qualify" : [
+        "You aren't a true fan of Star Wars! LIEEEERRRRR",
+        "You have now 1 question? Serious? This isn't a joke!!",
+        "Fazer 2",
+        "Fazer 3",
+        "Fazer 4"
     ]
 }

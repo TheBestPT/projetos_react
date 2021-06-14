@@ -1,15 +1,17 @@
 *{
     margin: 0;
     padding: 0;
-    /*color: white;*/
+    color: white;
+    background-image: url('../img/backgroundpng.png');
 }
 
 
 .answer{
-    background-color: #808080;
+    /*background-color: #808080;*/
     margin: 10px;
     padding: 10px;
     color: white;
+    cursor: pointer;
 }
 
 .answer:hover{
@@ -18,4 +20,12 @@
 
 .answer_selected {
     background-color: black;
+}
+
+.all_content{
+    text-align: center;
+}
+
+.questions_center{
+    
 }
