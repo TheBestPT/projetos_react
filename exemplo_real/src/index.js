@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import PainelPerguntas from './components/PainelPerguntas'
 
 ReactDOM.render(
-    <h1>Ola</h1>,
+    <PainelPerguntas />,
     document.getElementById('root')
 )
