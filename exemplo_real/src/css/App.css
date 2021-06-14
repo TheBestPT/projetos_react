@@ -11,3 +11,11 @@
     padding: 10px;
     color: white;
 }
+
+.answer:hover{
+    background-color: black;
+}
+
+.answer_selected {
+    background-color: black;
+}
