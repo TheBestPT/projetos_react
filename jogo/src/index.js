@@ -5,6 +5,7 @@ import Button from './components/Button'
 import Img from './components/Img'
 import MsgEstatica from './components/MsgEstatica'
 import MsgMain from './components/MsgMain'
+import MeuComponente from './components/MeuComponente'
 
 //componentes funcao (usado para quando queremos implementar esta funcionalidade em qualquer lado e nao faz parte de nenhum objeto)
 /*ReactDOM.render(
@@ -23,10 +24,17 @@ import MsgMain from './components/MsgMain'
     document.getElementById('root')
 )*/
 
-ReactDOM.render(
+//passar props nas functions
+/*ReactDOM.render(
     <MsgMain/>,
     document.getElementById('root')
+)*/
+
+ReactDOM.render(
+    <MeuComponente/>,
+    document.getElementById('root')
 )
+
 
 /*ReactDOM.render(
     <Aplicacao />,
