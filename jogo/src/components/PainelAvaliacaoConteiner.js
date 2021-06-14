@@ -1,7 +1,7 @@
 import React from 'react'
 import Jogador from './Jogador'
 import Confronto from './Confronto'
-
+import '../css/App.css'
 
 export default class PainelAvaliacaoConteiner extends React.Component{
     constructor(){
@@ -15,7 +15,7 @@ export default class PainelAvaliacaoConteiner extends React.Component{
         console.log(this.props.confronto)
         return (
             <div>
-                <div style={{float:'left'}}>
+                <div className='floatLeft'>
                     <Jogador nome={this.props.jogador1.nome} pontos={this.state.pontos_jogador1}/>
                 </div>    
                 <div style={{float:'left'}}>

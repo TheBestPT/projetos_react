@@ -18,7 +18,7 @@ export default class Jogador extends React.Component{
         )
     }
 
-    /*somarPonto() {
+    somarPonto() {
         this.setState({pontos : this.state.pontos + 1})
-    }*/
+    }
 }
