@@ -16,6 +16,7 @@ body{
     padding: 10px;
     color: black;
     width: 65%;
+    border-radius: 10px;
     cursor: pointer;
 }
 
@@ -52,4 +53,5 @@ body{
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    border-radius: 10px;
   }

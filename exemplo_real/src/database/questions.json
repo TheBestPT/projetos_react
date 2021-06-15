@@ -59,8 +59,8 @@
     "question_qualify" : [
         {"phrase" : "You aren't a true fan of Star Wars! LIEEEERRRRR", "img" : "0score.jpg"},
         {"phrase" : "You have now 1 question? Serious? This isn't a joke!!", "img" : "1score.png"},
-        {"phrase" : "Fazer 2", "img" : "2score.jpg"},
-        {"phrase" : "Fazer 2«3", "img" : "3score.jpg"},
+        {"phrase" : "You are better but it isn't enough!!!!!", "img" : "2score.jpg"},
+        {"phrase" : "Almost done but you'd never be the master!!!!!", "img" : "3score.jpg"},
         {"phrase" : "You are a big fan of Star Wars. You are the choosen one!!!", "img" : "all_score.jpg"}
     ]
     
