@@ -1,5 +1,6 @@
 import React from 'react'
 import Questions from '../database/questions.json'
+import App from '../css/App.css'
 export default class ResultadoPerguntas extends React.Component{
     render(){
         let questions = Questions.questions
@@ -8,11 +9,14 @@ export default class ResultadoPerguntas extends React.Component{
             if(questions[i].correct_answer == this.props.resultado[i])
                 ++resultado
         }
+        console.log(resultado)
         return (
-        <h1>
-            {resultado}<br />
-            {this.props.resultado}
-        </h1>
+            <div className="all_content">
+                <h1>Your score {++resultado}</h1>
+                <h2>{Questions.question_qualify[resultado-1].phrase}</h2>
+                <img src={this.props.image[Questions.question_qualify[resultado-1].img].default}/><br />
+                <button className="button buttons" onClick={() => window.location.reload()}>Try again</button>
+            </div>
         )
     }
 }

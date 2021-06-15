@@ -2,6 +2,7 @@ import React from 'react'
 import Questions from '../database/questions.json'
 import Css from '../css/App.css'
 import ResultadoPerguntas from './ResultadoPerguntas'
+import Questao from './Questao'
 export default class PainelPerguntas extends React.Component {
     constructor(){
         super()
@@ -15,11 +16,7 @@ export default class PainelPerguntas extends React.Component {
         if(this.state.currentQuestion != Questions.questions.length){
             return (
                 <div className="all_content">
-                    <h1>You are a really true fan of Star Wars? Prove yourself!!</h1>
-                    <h2>Question {this.state.currentQuestion + 1}</h2>
-                    <img src={this.state.images[Questions.questions[this.state.currentQuestion].question_image].default} />
-                    <h2><b>{this.state.currentQuestion + 1} - {Questions.questions[this.state.currentQuestion].question}</b></h2>
-                    <h3>Possible Answer</h3>
+                    <Questao currentQuestion={this.state.currentQuestion} images={this.state.images}/>
                     <div className="questions_center">
                         <div className="answer" id="0Question" onClick={this.selectQuestion.bind(this)}>
                             A - {Questions.questions[this.state.currentQuestion].possible_answer[0]}
@@ -34,12 +31,12 @@ export default class PainelPerguntas extends React.Component {
                             D -{Questions.questions[this.state.currentQuestion].possible_answer[3]}
                         </div>
                     </div>
-                    <button onClick={this.nextQuestion.bind(this)}>Next</button>
+                    <button onClick={this.nextQuestion.bind(this)} className="button buttons">Next</button>
                 </div>
             )
         }else{
             return (
-                <ResultadoPerguntas resultado={this.state.answerSelected}/>
+                <ResultadoPerguntas resultado={this.state.answerSelected} image={this.state.images}/>
             )
         }
         
@@ -52,6 +49,11 @@ export default class PainelPerguntas extends React.Component {
     }
 
     nextQuestion() {
+        //console.log(this.state.answerSelected)
+        if(!this.state.answerSelected[this.state.currentQuestion]) {
+            alert('You have to answer the question!!')
+            return 
+        }
         const element = document.getElementsByClassName('answer')
         for (let i = 0; i < element.length; i++) {
              element[i].classList.remove('answer_selected')           
@@ -60,6 +62,12 @@ export default class PainelPerguntas extends React.Component {
     }
 
     selectQuestion(selector){
+        console.log(selector)
+        const element = document.getElementsByClassName('answer')
+        this.state.answerSelected.splice(this.state.currentQuestion, 1)
+        for (let i = 0; i < element.length; i++) {
+             element[i].classList.remove('answer_selected')           
+        }
         selector.target.classList.contains('answer_selected') ? selector.target.classList.remove('answer_selected') : selector.target.classList.add('answer_selected')
         let id = selector.target.id
         id = id.replace('Question', '')
@@ -69,3 +77,22 @@ export default class PainelPerguntas extends React.Component {
         console.log(this.state.answerSelected)
     }
 }
+
+
+/*
+
+<div className="questions_center">
+                        <div className="answer" id="0Question" onClick={this.selectQuestion.bind(this)}>
+                            A - {Questions.questions[this.state.currentQuestion].possible_answer[0]}
+                        </div>
+                        <div className="answer" id="1Question" onClick={this.selectQuestion.bind(this)}>
+                            B - {Questions.questions[this.state.currentQuestion].possible_answer[1]}
+                        </div>
+                        <div className="answer" id="2Question" onClick={this.selectQuestion.bind(this)}>
+                            C - {Questions.questions[this.state.currentQuestion].possible_answer[2]}
+                        </div>
+                        <div className="answer" id="3Question" onClick={this.selectQuestion.bind(this)}>
+                            D -{Questions.questions[this.state.currentQuestion].possible_answer[3]}
+                        </div>
+                    </div>
+*/
