@@ -3,6 +3,7 @@ import Questions from '../database/questions.json'
 import Css from '../css/App.css'
 import ResultadoPerguntas from './ResultadoPerguntas'
 import Questao from './Questao'
+import Painel from './Painel'
 export default class PainelPerguntas extends React.Component {
     constructor(){
         super()
@@ -14,25 +15,8 @@ export default class PainelPerguntas extends React.Component {
     }
     render(){
         if(this.state.currentQuestion != Questions.questions.length){
-            return (
-                <div className="all_content">
-                    <Questao currentQuestion={this.state.currentQuestion} images={this.state.images}/>
-                    <div className="questions_center">
-                        <div className="answer" id="0Question" onClick={this.selectQuestion.bind(this)}>
-                            A - {Questions.questions[this.state.currentQuestion].possible_answer[0]}
-                        </div>
-                        <div className="answer" id="1Question" onClick={this.selectQuestion.bind(this)}>
-                            B - {Questions.questions[this.state.currentQuestion].possible_answer[1]}
-                        </div>
-                        <div className="answer" id="2Question" onClick={this.selectQuestion.bind(this)}>
-                            C - {Questions.questions[this.state.currentQuestion].possible_answer[2]}
-                        </div>
-                        <div className="answer" id="3Question" onClick={this.selectQuestion.bind(this)}>
-                            D -{Questions.questions[this.state.currentQuestion].possible_answer[3]}
-                        </div>
-                    </div>
-                    <button onClick={this.nextQuestion.bind(this)} className="button buttons">Next</button>
-                </div>
+            return (    
+                <Painel currentQuestion={this.state.currentQuestion} selectQuestion={this.selectQuestion.bind(this, this.state.answerSelected, this.state.currentQuestion)} nextQuestion={this.nextQuestion.bind(this, this.state.answerSelected, this.state.currentQuestion)} images={this.state.images}/>
             )
         }else{
             return (
@@ -60,7 +44,8 @@ export default class PainelPerguntas extends React.Component {
         this.setState({currentQuestion : this.state.currentQuestion + 1})
     }
 
-    selectQuestion(selector){
+    selectQuestion(currentQuestion, answer, selector){
+        console.log(selector)
         const element = document.getElementsByClassName('answer')
         this.state.answerSelected.splice(this.state.currentQuestion, 1)
         for (let i = 0; i < element.length; i++) {
