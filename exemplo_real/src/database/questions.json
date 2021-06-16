@@ -60,7 +60,8 @@
         {"phrase" : "You aren't a true fan of Star Wars! LIEEEERRRRR", "img" : "0score.jpg"},
         {"phrase" : "1 answer? Serious? This isn't a joke!!", "img" : "1score.png"},
         {"phrase" : "You became better but it isn't enough!!!!!", "img" : "2score.jpg"},
-        {"phrase" : "Almost done but you'd never be the master!!!!!", "img" : "3score.jpg"},
+        {"phrase" : "Better but you will never be a master", "img" : "3score.jpg"},
+        {"phrase" : "Almost done but you'd never be the master!!!!!", "img" : "4score.jpg"},
         {"phrase" : "You are a big fan of Star Wars. You are the choosen one!!!", "img" : "all_score.jpg"}
     ]
     
