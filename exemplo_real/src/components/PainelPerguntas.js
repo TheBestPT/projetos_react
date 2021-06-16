@@ -49,8 +49,7 @@ export default class PainelPerguntas extends React.Component {
     }
 
     nextQuestion() {
-        //console.log(this.state.answerSelected)
-        if(!this.state.answerSelected[this.state.currentQuestion]) {
+       if(!this.state.answerSelected[this.state.currentQuestion]) {
             alert('You have to answer the question!!')
             return 
         }
@@ -58,11 +57,10 @@ export default class PainelPerguntas extends React.Component {
         for (let i = 0; i < element.length; i++) {
              element[i].classList.remove('answer_selected')           
         }
-        this.setState({currentQuestion : this.state.currentQuestion + 1})   
+        this.setState({currentQuestion : this.state.currentQuestion + 1})
     }
 
     selectQuestion(selector){
-        console.log(selector)
         const element = document.getElementsByClassName('answer')
         this.state.answerSelected.splice(this.state.currentQuestion, 1)
         for (let i = 0; i < element.length; i++) {
@@ -77,22 +75,3 @@ export default class PainelPerguntas extends React.Component {
         console.log(this.state.answerSelected)
     }
 }
-
-
-/*
-
-<div className="questions_center">
-                        <div className="answer" id="0Question" onClick={this.selectQuestion.bind(this)}>
-                            A - {Questions.questions[this.state.currentQuestion].possible_answer[0]}
-                        </div>
-                        <div className="answer" id="1Question" onClick={this.selectQuestion.bind(this)}>
-                            B - {Questions.questions[this.state.currentQuestion].possible_answer[1]}
-                        </div>
-                        <div className="answer" id="2Question" onClick={this.selectQuestion.bind(this)}>
-                            C - {Questions.questions[this.state.currentQuestion].possible_answer[2]}
-                        </div>
-                        <div className="answer" id="3Question" onClick={this.selectQuestion.bind(this)}>
-                            D -{Questions.questions[this.state.currentQuestion].possible_answer[3]}
-                        </div>
-                    </div>
-*/

@@ -9,7 +9,6 @@ export default class ResultadoPerguntas extends React.Component{
             if(questions[i].correct_answer == this.props.resultado[i])
                 ++resultado
         }
-        console.log(resultado)
         //resultado == 0 ? resultado = 0 : --resultado
         //console.log(resultado)
         return (//!= 0 ? resultado+1 : resultado
@@ -17,7 +16,7 @@ export default class ResultadoPerguntas extends React.Component{
                 <h1>Your score {resultado}</h1>
                 <h2>{Questions.question_qualify[resultado == 5 ? resultado = 4 : resultado].phrase}</h2>
                 <img src={this.props.image[Questions.question_qualify[resultado].img].default}/><br />
-                <button className="button buttons" onClick={() => window.location.reload()}>Try again</button>
+                <button className="button buttons" onClick={() => window.location.reload()}>Play again</button>
             </div>
         )
     }
