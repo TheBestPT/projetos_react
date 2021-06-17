@@ -9,12 +9,8 @@ export default class ResultadoPerguntas extends React.Component{
             if(questions[i].correct_answer == this.props.resultado[i])
                 ++resultado
         }
-        //resultado == 0 ? resultado = 0 : --resultado
         console.log(resultado)
-        //ESTUPIDEZ COMPLETA MAS OLHA VESSE RESOLVES
-        ///let res = resultado >= questions.length ? (questions.length-1) : resultado
-        //resultado == 5  ? resultado = 4 : resultado
-        return (//!= 0 ? resultado+1 : resultado
+        return (
             <div className="all_content">
                 <h1>Your score {resultado}</h1>
                 <h2>{Questions.question_qualify[resultado].phrase}</h2>
