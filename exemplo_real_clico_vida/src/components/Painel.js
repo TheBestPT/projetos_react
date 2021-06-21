@@ -3,13 +3,6 @@ import Questions from '../database/questions.json'
 import Questao from './Questao'
 //https://www.dropbox.com/s/c7jgkqvidzmxmfm/questions.json?dl=0
 export default class Painel extends React.Component{
-    constructor(){
-        super()
-        this.state = {
-            startQuiz : 0,
-            endQuiz : 0
-        }
-    }
     render(){
         //console.log(new Date)
         //console.log(this.state.startQuiz)
@@ -33,33 +26,26 @@ export default class Painel extends React.Component{
         )
     }
 
-    componentDidUpdate(){//Quando o conteudo é atualizado ou seja o botão next é clicado no PainelPerguntas o conteudo é renderizado de novo atualizando o props e ai o componentDidUpdate é chamado
+    componentDidUpdate(prevProps){//Quando o conteudo é atualizado ou seja o botão next é clicado no PainelPerguntas o conteudo é renderizado de novo atualizando o props e ai o componentDidUpdate é chamado
+        //É usado para quando uma prop ou state é atualizada e é necessário buscar dados á api
         //console.log('update', prevProps, new Date)
         //this.setState({startQuiz : this.props.startQuiz})
         //this.setState({endQuiz : this.props.endQuiz})
+        if(this.props.currentQuestion !== prevProps.currentQuestion)
+            console.log('Autalizado')
     }
-
-    /*componentDidMount(){//Quando este component é renderizado o componetDidMount é chamado (igual ao onStart do android (JAVA))
-        //console.log('Did Mount', new Date)
-    }
-
-    componentWillUnmount(){//Quando chegamos a última pergunta este componente deixa de ser chamado entao o metodo componentWillUnmount que é igual ao onDestroy do android (JAVA)
-        //console.log('Unmount', new Date)
-    }*/
     
     //componentWillUnmount()Quando chegamos a última pergunta este componente deixa de ser chamado entao o metodo componentWillUnmount que é igual ao onDestroy do android (JAVA)
-    //componentDidMount()Quando este component é renderizado o componetDidMount é chamado (igual ao onStart do android (JAVA))
+    //componentDidMount() Quando este component é renderizado o componetDidMount é chamado (igual ao onStart do android (JAVA))
     //componentDidUpdate()Quando o conteudo é atualizado ou seja o botão next é clicado no PainelPerguntas o conteudo é renderizado de novo atualizando o props e ai o componentDidUpdate é chamado
 
-    componentDidMount(){
+    componentDidMount(){//Guardar a data de começo do quiz
         let date = new Date()
-        //this.setState({startQuiz : date})
         this.props.saveStartQuiz(date)
     }
 
-    componentWillUnmount(){
+    componentWillUnmount(){//Guardar a hora que acabou o desafio para calcular quanto tempo demorou a acabar o desafio
         let date = new Date()
-        //this.setState({endQuiz : date})
         this.props.saveEndQuiz(date)
     }
 }

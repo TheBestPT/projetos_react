@@ -18,6 +18,7 @@ export default class PainelPerguntas extends React.Component {
 
 
     render() {
+        console.log(this.state.currentQuestion)
         if (this.state.currentQuestion !== Questions.questions.length) {
             return (
                 <Painel 
@@ -80,7 +81,6 @@ export default class PainelPerguntas extends React.Component {
 
     saveEndQuiz(tempo){
         this.setState({endQuiz : tempo})
-        console.log(tempo - this.state.startQuiz)
         console.log('guardado fim')
     }
 }
