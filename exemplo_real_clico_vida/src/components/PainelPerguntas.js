@@ -11,7 +11,8 @@ export default class PainelPerguntas extends React.Component {
             images: this.importAll(require.context('../img', false, /\.(png|jpe?g|svg)$/)),
             answerSelected: [],
             startQuiz : null,
-            endQuiz : null
+            endQuiz : null,
+            timeMedia : []
         }
     }
 
@@ -24,7 +25,9 @@ export default class PainelPerguntas extends React.Component {
                     selectQuestion={this.selectQuestion.bind(this)} 
                     nextQuestion={this.nextQuestion.bind(this)} images={this.state.images} 
                     saveStartQuiz={this.saveStartQuiz.bind(this)}
-                    saveEndQuiz={this.saveEndQuiz.bind(this)}/>
+                    saveEndQuiz={this.saveEndQuiz.bind(this)}
+                    startQuiz={this.state.startQuiz}
+                    endQuiz={this.state.endQuiz}/>
             )
         } else {
             return (

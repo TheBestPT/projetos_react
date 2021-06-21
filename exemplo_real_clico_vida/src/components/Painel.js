@@ -12,7 +12,7 @@ export default class Painel extends React.Component{
     }
     render(){
         //console.log(new Date)
-        console.log(this.state.startQuiz)
+        //console.log(this.state.startQuiz)
         return (
             <div className="questions_center">
                 <Questao currentQuestion={this.props.currentQuestion} images={this.props.images}/>
@@ -33,10 +33,10 @@ export default class Painel extends React.Component{
         )
     }
 
-    componentDidUpdate(prevProps){//Quando o conteudo é atualizado ou seja o botão next é clicado no PainelPerguntas o conteudo é renderizado de novo atualizando o props e ai o componentDidUpdate é chamado
+    componentDidUpdate(){//Quando o conteudo é atualizado ou seja o botão next é clicado no PainelPerguntas o conteudo é renderizado de novo atualizando o props e ai o componentDidUpdate é chamado
         //console.log('update', prevProps, new Date)
-        if(prevProps.currentQuestion == this.props.currentQuestion)
-            console.log('u')
+        //this.setState({startQuiz : this.props.startQuiz})
+        //this.setState({endQuiz : this.props.endQuiz})
     }
 
     /*componentDidMount(){//Quando este component é renderizado o componetDidMount é chamado (igual ao onStart do android (JAVA))
@@ -53,13 +53,13 @@ export default class Painel extends React.Component{
 
     componentDidMount(){
         let date = new Date()
-        this.setState({startQuiz : date})
+        //this.setState({startQuiz : date})
         this.props.saveStartQuiz(date)
     }
 
     componentWillUnmount(){
         let date = new Date()
-        this.setState({endQuiz : date})
+        //this.setState({endQuiz : date})
         this.props.saveEndQuiz(date)
     }
 }

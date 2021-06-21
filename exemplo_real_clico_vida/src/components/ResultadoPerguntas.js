@@ -15,7 +15,6 @@ export default class ResultadoPerguntas extends React.Component{
         let howManyTimePass = this.props.date.end - this.props.date.begin
         howManyTimePass /= 1000
         let seconds = Math.round(howManyTimePass)
-
         return (
             <div className="all_content">
                 <h1>Your score {resultado}</h1>
