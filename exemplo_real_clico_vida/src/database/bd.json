@@ -1,0 +1,66 @@
+{
+    "questions" : [
+        {
+            "question" : "Which order brought about the death of the Jedi?",
+            "possible_answer" : [
+                "Order 66",
+                "Order 55",
+                "Order 77",
+                "Order 88"
+            ],
+            "correct_answer" : 0,
+            "question_image" : "order_star_wars.jpg"
+        },
+        {
+            "question" : "What are these four-legged giants called?",
+            "possible_answer" : [
+                "AN-AE",
+                "AR-AR",
+                "AT-AT",
+                "AT-ST"
+            ],
+            "correct_answer" : 2,
+            "question_image" : "big-machine.jpg"
+        },
+        {
+            "question" : "Which young Jedi Knight becomes Darth Vader in Star Wars?",
+            "possible_answer" : [
+                "Luke Skywalker",
+                "Anakin Skywalker",
+                "Chewie",
+                "Lando Calrissian"
+            ],
+            "correct_answer" : 1,
+            "question_image" : "darthvader.jpg"
+        },
+        {
+            "question" : "Which of these movies is the one where Luke finds out Vader is his father?",
+            "possible_answer" : [
+                "Return of the Jedi",
+                "The Empire Strikes Back",
+                "The Force Awakens",
+                "Attack of the Clones"
+            ],
+            "correct_answer" : 1,
+            "question_image" : "luke_cry.jpg"
+        },
+        {
+            "question" : "What bounty hunter captures Han Solo?",
+            "possible_answer" : [
+                "Jabba The Hut",
+                "Count Dooku",
+                "Boba Fett",
+                "Yoda"
+            ],
+            "correct_answer" : 2,
+            "question_image" : "Boba-Fett.jpg"
+        }
+    ],
+    "question_qualify" : [
+        {"phrase" : "You aren't a true fan of Star Wars! LIEEEERRRRR", "img" : "0score.jpg"},
+        {"phrase" : "You have now 1 question? Serious? This isn't a joke!!", "img" : "1score.jpg"},
+        {"phrase" : "Fazer 2", "img" : "2score.jpg"},
+        {"phrase" : "Fazer 2«3", "img" : "3score.jpg"},
+        {"phrase" : "You are a big fan of Star Wars. You are the choosen one!!!", "img" : "all_score.jpg"}
+    ]
+}
