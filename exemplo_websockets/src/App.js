@@ -1,20 +1,16 @@
-import React, { useState, useEffect } from "react";
-import socketIOClient from "socket.io-client";
-const ENDPOINT = "http://localhost:3001";
+import React from "react"
+import socketIOClient from "socket.io-client"
+const SERVER = "http://127.0.0.1:3001/"
 
 function App() {
-  const [response, setResponse] = useState("");
-
-  useEffect(() => {
-    const socket = socketIOClient(ENDPOINT);
-    socket.on("FromAPI", data => {
-      setResponse(data);
-    });
-  }, []);
+  let socket = socketIOClient(SERVER)
+  socket.on('connection', () => {
+        console.log(`I'm connected with the back-end`)
+  })
 
   return (
     <p>
-      It's <time dateTime={response}>{response}</time>
+      u
     </p>
   );
 }

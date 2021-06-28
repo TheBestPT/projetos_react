@@ -1,20 +1,24 @@
-/*import React from 'react'
+import React from 'react'
 import config from '../config.json'
-
+import socketIOClient from 'socket.io-client'
 export default class MsgTest extends React.Component{
 
     
     render(){
-        const [response, setResponse] = useState("");
-
-        useEffect(() => {
-          const socket = socketIOClient(config.server);
-          socket.on("FromAPI", data => {
-            setResponse(data);
-          });
-        }, []);
+      let socket = socketIOClient(config.server)
+      socket.on('connection', () => {
+            console.log(`I'm connected with the back-end`)
+      })
         return (
-            <p>Ola {response}</p>
+            <button onClick={this.enviar.bind(this)}>Enviar mensagem</button>
         )
     }
-}*/
+
+    enviar(){
+      console.log('u')
+      let socket = socketIOClient(config.server)
+      socket.on("msg", () => {
+        socket.emit('olaaaa')
+      })
+    }
+}
