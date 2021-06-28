@@ -1,7 +1,6 @@
 import React from 'react'
 import Questions from '../database/questions.json'
 import Questao from './Questao'
-//https://www.dropbox.com/s/c7jgkqvidzmxmfm/questions.json?dl=0
 export default class Painel extends React.Component{
     render(){
         //console.log(new Date)
@@ -19,7 +18,7 @@ export default class Painel extends React.Component{
                     C - {Questions.questions[this.props.currentQuestion].possible_answer[2]}
                 </div>
                 <div className="answer" id="3" onClick={this.props.selectQuestion.bind(this)}>
-                    D -{Questions.questions[this.props.currentQuestion].possible_answer[3]}
+                    D - {Questions.questions[this.props.currentQuestion].possible_answer[3]}
                 </div>
                 <button onClick={this.props.nextQuestion.bind(this)} className="button buttons">Next</button>
             </div>
