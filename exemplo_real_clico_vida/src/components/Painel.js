@@ -27,12 +27,10 @@ export default class Painel extends React.Component{
     }
 
     componentDidUpdate(prevProps){//Quando o conteudo é atualizado ou seja o botão next é clicado no PainelPerguntas o conteudo é renderizado de novo atualizando o props e ai o componentDidUpdate é chamado
+        //é exucutado antes do metodo render()
         //É usado para quando uma prop ou state é atualizada e é necessário buscar dados á api
-        //console.log('update', prevProps, new Date)
-        //this.setState({startQuiz : this.props.startQuiz})
-        //this.setState({endQuiz : this.props.endQuiz})
-        if(this.props.currentQuestion !== prevProps.currentQuestion)
-            console.log('Autalizado')
+        if(this.props.currentQuestion !== prevProps.currentQuestion)//exemplo simples e tem de estar involvido num if para nao ficar infitinito principalmente alterando propriedades state
+            console.log("Posição anterior da pergunta: "+prevProps.currentQuestion+" Posição da atual da pergunta: "+this.props.currentQuestion)
     }
     
     //componentWillUnmount()Quando chegamos a última pergunta este componente deixa de ser chamado entao o metodo componentWillUnmount que é igual ao onDestroy do android (JAVA)
