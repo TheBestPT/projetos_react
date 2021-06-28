@@ -1,0 +1,4 @@
+https://www.valentinog.com/blog/socket-react/
+https://www.fullstacklabs.co/blog/chat-application-react-express-socket-io
+https://socket.io/get-started/chat
+https://www.w3docs.com/learn-html/html-form-templates.html
