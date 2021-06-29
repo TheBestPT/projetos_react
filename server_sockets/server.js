@@ -1,6 +1,5 @@
 var app = require('express')()
 var http = require('http').createServer(app)
-//var io = require('socket.io')(http)
 const io = require('socket.io')(http, {
   cors: {
     origin: '*',
@@ -21,34 +20,23 @@ let counter = 0
 let messages = []
 io.on("connection", (socket) => {
     console.log("New client connected")
-    socket.emit('connection', counter++)
+    socket.emit('connection', counter++)//atribuir id ao cliente
 
-    socket.on('username', (username) => {
-      username.push(username)
-    })
-
-    socket.on('chat-message', (content) => {
-      messages.push(`Message sent by ${username[content.id]}: ${content.msg}`)
+    socket.emit("message", messages)
+    
+    socket.on('chat-message', (content) => {//adicionar mensagem e enviar o chat com todas as mensagens 
+      messages.push(`Message sent by ${!username[content.id] ? 'Sem nome' : username[content.id]}: ${content.msg}`)
       console.log(`Message sent by ${!username[content.id] ? 'Sem nome' : username[content.id]}: ${content.msg}`)
+      io.emit('message', messages)
     })
 
-    socket.on('disconnect', () => {
+    socket.on('disconnect', () => {//disconectar cliente
       console.log('user disconnected')
     })
 
-    socket.on('set-username', (content) => {
+    socket.on('set-username', (content) => {//alterar username
       username[content.id] = content.username
     })
-
-    socket.on('messages', (content) => {
-      socket.emit(messages)
-      socket.emit('uuuuuuuuuuuuuuuuuuuu')
-    })
-
-})
-
-io.on('global-messages', (content) => {
-  socket.emit(messages)
 })
 
 
