@@ -1,8 +1,8 @@
 import react from 'react'
 import ReactDom from 'react-dom'
-import MsgTest from './components/MsgTest'
+import Menssger from './components/Menssger'
 //import App from './App'
 ReactDom.render(
-    <MsgTest />,
+    <Menssger />,
     document.getElementById('root')
 )
