@@ -68,6 +68,7 @@ export default class Aplicacao extends React.Component{
 
 	render(){
 		console.log(this.state.data)
+
 		if(!this.state.loaded){
 			return <div>Loading....</div>
 		}else{
