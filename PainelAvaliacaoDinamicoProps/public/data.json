@@ -1,0 +1,15 @@
+{
+    "confronto": {
+        "local": "Porto",
+        "data": "12/06/2019",
+        "hora": "12:45m"
+    },
+    "j1": {
+        "nome": "Sérgio",
+        "permitir": "Nao"
+    },
+    "j2":{
+        "nome": "Maria",
+        "permitir" : "Sim"
+    }
+}
