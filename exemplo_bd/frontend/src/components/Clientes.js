@@ -1,31 +1,35 @@
 import React from 'react'
-import config from '../config.json'
-const SERVER = config.server
+
 export default class Clientes extends React.Component{
-    constructor(){
-        super()
-        this.state = {
-            clientes : []
-        }
-    }
-
-    async componentDidMount(){
-        const clientes = await fetch(SERVER+'/getClients')
-        let data = await clientes.json()
-        console.log(data.clientes)
-        this.setState({clientes : data.clientes})
-    }
-
-
     render(){
         return (
             <div>
-                <h1>Clientes</h1>
-                <ul>
-                    {this.state.clientes.map((item) => 
-                        <li key={item.id}>Nome : {item.nome}, Morada :  {item.morada}, Nif - {item.nif}</li>
-                    )}
-                </ul>
+                <h3>Clientes</h3>
+                <table>
+                    <thead>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Morada</th>
+                        <th>Nif</th>
+                        <th>Edição</th>
+                    </thead>
+                    <tbody>
+                        {this.props.clientes.map((item) => 
+                            <tr key={item.id}>
+                                <td>{item.id}</td>
+                                <td>{item.nome}</td>
+                                <td>{item.morada}</td>
+                                <td>{item.nif}</td>
+                                <td>
+                                    <div>
+                                        <button onClick={this.props.apagar.bind(this, item.id)}>Delete</button> 
+                                        <button onClick={this.props.editar.bind(this, item)}>Update</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        )}
+                    </tbody>
+                </table>
             </div>
         )
     }

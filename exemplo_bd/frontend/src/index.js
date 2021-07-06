@@ -1,7 +1,7 @@
 import react from 'react'
 import ReactDOM  from 'react-dom'
-import Clientes from './components/Clientes'
+import App from './components/App'
 ReactDOM.render(
-    <Clientes />,
+    <App />,
     document.getElementById('root')
 )
