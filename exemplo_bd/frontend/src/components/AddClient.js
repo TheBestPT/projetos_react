@@ -12,7 +12,7 @@ export default class AddClient extends React.Component{
                     <label>Morada</label><br />
                     <input type="text" id="nifAdd" value={this.props.morada} onChange={this.props.moradaChange.bind(this)}/><br />
                     <label>Nif</label><br />
-                    <input type="text" id="nifAdd" value={this.props.nif} onChange={this.props.nifChange.bind(this)}/><br />
+                    <input type="number" id="nifAdd" value={this.props.nif} onChange={this.props.nifChange.bind(this)}/><br />
                     <input type="hidden" id="edit" value={this.props.edit} />
                     <input type="submit" value="Adicionar" />
                 </form>

@@ -1,18 +1,20 @@
 import React from 'react'
-
+import Css from '../css/style.css'
 export default class Clientes extends React.Component{
     /* Tabela com listagem de clientes */
     render(){
         return (
             <div>
                 <h3>Clientes</h3>
-                <table>
+                <table className="table-manage">
                     <thead>
-                        <th>Id</th>
-                        <th>Nome</th>
-                        <th>Morada</th>
-                        <th>Nif</th>
-                        <th>Edição</th>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nome</th>
+                            <th>Morada</th>
+                            <th>Nif</th>
+                            <th>Edição</th>
+                        </tr>
                     </thead>
                     <tbody>
                         {this.props.clientes.map((item) => 

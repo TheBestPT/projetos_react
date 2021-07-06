@@ -89,7 +89,7 @@ export default class App extends React.Component{
         return (
             <div>
                 <AddClient nomeChange={this.setNome.bind(this)} moradaChange={this.setMorada.bind(this)} nifChange={this.setNif.bind(this)} guardar={this.guardar.bind(this)} nome={this.state.nome} morada={this.state.morada} nif={this.state.nif} editar={this.state.edit}/>
-                <p>{this.state.flash_message}</p>
+                <p className="flash_data">{this.state.flash_message}</p>
                 <Clientes clientes={this.state.clientes} apagar={this.apagar.bind(this)} editar={this.editar.bind(this)}/>
             </div>
         )
