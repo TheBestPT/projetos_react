@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default class Clientes extends React.Component{
+    /* Tabela com listagem de clientes */
     render(){
         return (
             <div>

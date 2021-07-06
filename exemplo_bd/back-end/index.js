@@ -9,6 +9,10 @@ app.use(express.json())//poder capturar body nas requisicoes post, update e dele
 const connection = mysql.createConnection(config.sql_server)//criar conexao com a base de dados
 app.use(cors())//ignorar politica para evitar problemas
 
+/*
+Este exemplo e so basiado numa tabela que é de clientes
+Fiz um CRUD simples guardando tudo numa base dados sql
+*/
 
 app.get('/getClients', async (req, res) => {
     connection.query('SELECT * FROM clientes', (err, rows, fields) => {
